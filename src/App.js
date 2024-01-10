@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './pages/Header/Header';
+import Home from './pages/Home/Home';
+import Card from './pages/Card/Card';
+import Body from './pages/Body/Body';
+// import MovieDetail from './Components/MovieDetail';
+import MovieList from './pages/MovieList/MovieList';
+import MovieDetail from './Components/MovieDetail/MovieDetail';
+import MovieCastDetail from './Components/MovieCastDetail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+       <BrowserRouter>
+       <Header/>
+       {/* <Body/> */}
+       {/* <Home/> */}
+            <Routes>
+               <Route index element={<Body/>}></Route>
+                <Route path='movie/:id' element={<MovieDetail/>}></Route>
+                <Route path='movies/:type' element={<MovieList/>}></Route>
+                 <Route path='/*' element={<h1>Error Page</h1>}></Route>
+                 <Route path='movie/:id/castDetail' element={<MovieCastDetail/>}></Route>
+            </Routes>
+
+
+           
+       </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,160 @@
+.movie-detail-page{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    /* padding: 0 1rem; */
+   
+   
+}
+.movie-background{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
+}
+.movie-backdrop-image{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: 0 30%;
+    opacity: 0.3;
+}
+.movie-info{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    /* background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1)); */
+    opacity: 1;
+    transition: opacity .3s;
+bottom: 0px;
+justify-content: space-around;
+}
+
+.left-info{
+    width: 30%;
+
+}
+.right-info{
+    width: 70%;
+    /* padding: 1rem; */
+    /* margin-left: 4rem; */
+}
+
+
+.movie-poster{
+    max-width: 100%;
+   width: 300px;
+   border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
+}
+.movie-title{
+    margin-bottom: 0.3rem;
+
+}
+.movie-tagline{
+    margin-bottom: 0.7rem;
+    font-style: italic;
+    color: rgb(240, 240, 240);
+
+
+}
+
+.movie-type{
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+.movie-release-date{
+    margin-right: 1rem;
+
+}
+.movie-genres{
+    display: flex;
+
+}
+.movie-genres::before,.movie-runtime::before{
+    font-size: 1.3rem;
+    line-height: 1;
+    content: "•";
+    width: 100%;
+    height: 100%;
+    margin-right: 0.2rem;
+
+}
+
+.movie-genre-name{
+    margin-right: 0.5rem;
+    
+
+}
+
+
+.movie-rating{
+    display: flex;
+    margin-bottom: 1rem;
+
+}
+.rating{
+    margin-right: 1.5rem;
+}
+.movie-overview{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: rgb(233, 224, 224);
+}
+
+.icons{
+    display: flex;
+}
+.icons .icon{
+    cursor: pointer;
+    padding: 1rem;
+}
+
+
+@media (max-width: 768px) {
+   .movie-detail-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+
+    .movie-info{
+        flex-direction: column;
+        top: 100px;
+        background-image: none;
+        text-align: center;
+        /* justify-content: center; */
+    }
+    .movie-backdrop-image{
+        /* display: none;\
+         */
+         height: 100%;
+    }
+    .left-info {
+        width: 90%;
+    }
+    .right-info{
+        width: 90%;
+        margin-top: 2rem;
+    }
+    .movie-poster{
+        width: 300px;
+        max-width: 100%;
+    }
+    .movie-genres{
+       flex-direction: column;
+    
+    }
+    .movie-genres::before{
+content: "";    
+    }
+    .movie-type{
+        justify-content: space-between;
+    }
+   
+   
+}

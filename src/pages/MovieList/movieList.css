@@ -1,0 +1,11 @@
+.list-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.list-title{
+    margin: 2rem;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+}
