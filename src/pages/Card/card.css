@@ -72,7 +72,6 @@
 .cards_desc{
     font-size: 1rem;
     max-height: 70px;
-    background-color: aquamarine;
 
 }
 .cards_desc.expanded{

@@ -13,10 +13,10 @@ function MovieVideo({ movieId }) {
   const [videoKey, setVideoKey] = useState(null);
 
   const [backdropUrl, setBackdropUrl] = useState(null);
-const[showPopup,setShowPopup]=useState(false)
-// const videoUrl = `https://www.youtube.com/watch?v=uOh7x6WsNAw`;
+  const [showPopup, setShowPopup] = useState(false);
+  // const videoUrl = `https://www.youtube.com/watch?v=uOh7x6WsNAw`;
 
-// https://www.youtube.com/watch?v=wMVwoqp_fwM
+  // https://www.youtube.com/watch?v=wMVwoqp_fwM
 
   useEffect(() => {
     async function fetchVideoKey() {
@@ -64,7 +64,6 @@ const[showPopup,setShowPopup]=useState(false)
     // fetchVideosAndImages();
   }, [movieId]);
 
-
   return (
     <Style>
       <h4>See Videos</h4>
@@ -73,15 +72,15 @@ const[showPopup,setShowPopup]=useState(false)
 
         {/* <button onClick={fetchVideosAndImages}>click for videos</button> */}
         <img src={backdropUrl} alt="Backdrop" />
-        
-        <div className="play-icon" onClick={()=>setShowPopup(true)}>
-          <i className="fas fa-play"></i>
-        </div>
 
+        <div className="play-icon" onClick={() => setShowPopup(true)}>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/148/148744.png"
+            alt="Icon not found"
+          />
+        </div>
       </div>
-      {
-        showPopup&& <Popup setShowPopup={setShowPopup} videoUrl={videoUrl}/>
-      }
+      {showPopup && <Popup setShowPopup={setShowPopup} videoUrl={videoUrl} />}
     </Style>
   );
 }
@@ -90,8 +89,8 @@ export default MovieVideo;
 
 const Style = styled.div`
   width: 100%;
-  h4{
-    text-shadow: 0 0  3px #FF0000;
+  h4 {
+    text-shadow: 0 0 3px #ff0000;
   }
   .video-poster {
     background-color: aliceblue;
@@ -102,15 +101,15 @@ const Style = styled.div`
     }
 
     .play-icon {
-        width: 50px;
-        height: 50px;
+      width: 50px;
+      height: 50px;
       position: absolute;
       top: 50%;
       left: 50%;
-      background-color: black;
+      /* background-color: white; */
       border-radius: 50%;
-      display:grid;
-      place-content:center;
+      display: grid;
+      place-content: center;
       cursor: pointer;
     }
   }

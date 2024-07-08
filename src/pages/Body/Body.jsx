@@ -1,40 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import fetchMovies from '../../Apis/movie';
-import Home from '../Home/Home';
+import React, { useEffect, useState } from "react";
+import fetchMovies from "../../Apis/movie";
+import Home from "../Home/Home";
 
 function Body() {
-
-
   const [movies, setMovies] = useState([]);
 
-  
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-   },[])
-   const fetchData=async()=>{
-    try{
-        const result=await fetchMovies();
-        setMovies(result);
-    }catch(e){
-        console.log(e);
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const result = await fetchMovies();
+      setMovies(result);
+    } catch (e) {
+      console.log(e);
     }
-   };
+  };
 
-   
+  const handleClick = () => {
+    console.log(movies);
+  };
 
-   const handleClick=()=>{
-       console.log(movies);
-   }
- 
   return (
     <>
-    <Home moviesData={movies}/>
+      {movies && movies.length > 0 ? (
+        <Home moviesData={movies} />
+      ) : (
+        <p>Loading...</p>
+      )}
 
-    {/* <button onClick={handleClick}>click me</button> */}
-
-    
+      {/* <button onClick={handleClick}>click me</button> */}
     </>
-  )
+  );
 }
 
-export default Body
+export default Body;

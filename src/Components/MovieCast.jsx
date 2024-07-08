@@ -29,7 +29,10 @@ export default function MovieCast({ id }) {
         <div className="cast">
           {loading && <h3>loading...</h3>}
           {movieCharacters.slice(0, offset).map((profile) => (
-            <NavLink to={`/movie/${profile.id}/castDetail`} style={{textDecoration:"none"}}>
+            <NavLink
+              to={`/movie/${profile.id}/castDetail`}
+              style={{ textDecoration: "none" }}
+            >
               <ProfileTile {...profile} />
             </NavLink>
           ))}
