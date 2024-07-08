@@ -21,11 +21,12 @@ function App() {
           <Route index element={<Body />}></Route>
           <Route path="movie/:id" element={<MovieDetail />}></Route>
           <Route path="movies/:type" element={<MovieList />}></Route>
-          <Route path="/*" element={<Home />}></Route>
+
           <Route
             path="movie/:id/castDetail"
             element={<MovieCastDetail />}
           ></Route>
+          <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
